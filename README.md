@@ -11,9 +11,7 @@ This project demonstrates the use of an **Artificial Neural Network (ANN)** to p
 3. [Data Preprocessing](#data-preprocessing)  
 4. [Building the ANN](#building-the-ann)  
 5. [Training the ANN](#training-the-ann)  
-6. [Making Predictions](#making-predictions)  
-7. [Dependencies](#dependencies)  
-8. [Usage](#usage)  
+6. [Conclusion](#conclusion)  
 
 ---
 
@@ -70,12 +68,10 @@ The dataset is split into **training** and **test** sets using an 80/20 split.
 
 ---
 
-## Making Predictions
+## Conclusion
 
-- Predict outputs on the test set using `ann.predict()`  
-- Compare predicted values with actual target values to evaluate model performance  
+The Artificial Neural Network demonstrates strong predictive performance on the test set, achieving an R² score of 0.92, which indicates that the model explains the majority of the variance in electrical energy output. The Mean Squared Error (24.70) and Mean Absolute Error (3.96) further confirm that prediction errors remain limited and acceptable for a regression task of this nature.
 
-```python
-np.set_printoptions(precision=2)
-print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
-```
+Residual analysis shows errors centered around zero with no visible systematic pattern, suggesting that the model does not suffer from bias and that its predictions are well-balanced across the range of outputs. This behavior indicates good generalization and confirms that the model has successfully captured the underlying relationships in the data.
+
+Overall, the results validate the effectiveness of the ANN architecture for this problem, providing both high accuracy and stable error behavior, making it suitable for practical energy output prediction tasks.
